@@ -34,8 +34,6 @@ It then edits the firewall to allow outbound traffic using the following command
 netsh.exe advfirewall firewall add rule "name=Quant" "program=c:\users\appdata\<uid>\svchost.exe" dir=Out action=allow'
 `
 
-![quant_firewall]({{ site.baseurl }}/images/quant_firewall.png)
-
 And also changes the permission of the folder and executable using a very undetected and elegant method, launching an instance of cmd.exe
 
 `cmd.exe /c echo Y|CACLS "c:\users\<user>\appdata\roaming\<uid>\svchost.exe" /P "user:R"
