@@ -27,25 +27,23 @@ Quant checks for a number of antiviruses by comparing registry keys, exiting if 
 
 It then edits the firewall to allow outbound traffic using the following command
 
-```
+`
 netsh.exe advfirewall firewall add rule "name=Quant" "program=c:\users\appdata\<uid>\svchost.exe" dir=Out action=allow'
-```
+`
 
 And also changes the permission of the folder and executable using a very undetected and elegant method, launching an instance of cmd.exe
 
-```
-cmd.exe /c echo Y|CACLS "c:\users\<user>\appdata\roaming\<uid>\svchost.exe" /P "user:R"
-cmd.exe /c echo Y|CACLS "c:\users\<user>\appdata\roaming\<uid>" /P "user:R"
-```
+`cmd.exe /c echo Y|CACLS "c:\users\<user>\appdata\roaming\<uid>\svchost.exe" /P "user:R"
+cmd.exe /c echo Y|CACLS "c:\users\<user>\appdata\roaming\<uid>" /P "user:R"`
 
 
 It also launches the new dropped executable using a non-resolved ShellExecuteA, before sleeping for a number of minutes. Very nice.
 
 Then, it uses a very stealthy and undetected startup method, the runkey
 
-```
+`
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
-```
+`
 
 It pings the panel every 1 minute, and for some reason it decrypts the panel url every single time it wants to send a request? 
 
@@ -56,9 +54,9 @@ It uses WinInet functions to send a get request **(InternetOpenA, InternOpenUrlA
 The entire config, including the panel url, is stored in 512 byte blocks. In order to decrypt the configuration, Quant Loader uses a primitive method of string encryption, simply subtraction from a hardcoded key.
 In this particular sample the key is:
 
-```
+`
 23b4d1c1bbad099329ebc045b8861b9d
-```
+`
 
 Here is pseudocode for the algorithm. 
 
