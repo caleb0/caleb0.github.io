@@ -12,22 +12,12 @@ The malware then generates it's unique ID by reading the MachineGuid key at *"SO
 
 Quant checks for a number of antiviruses by comparing registry keys, exiting if any of them are found.
 
-Kaspersky
-
-```
-"kis" "SOFTWARE\KasperskyLab\LicStrg"
-```
-
-Panda
-	"FirewallName" "SOFTWARE\Panda Software\Setup"
-Norton Security
-	"TaskbarGroupIcon" "SOFTWARE\CLasses\Applications\NS.exe"
-Dr Web
-	"DisplayName" "SYSTEM\ControlSet001\services\DrWebLwf"
-Bitdefender
-	"InstallPath" "SOFTWARE\Bitdefender Agent\Install"
-Bullguard
-	"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\bullguard.exe"
+* "kis" "SOFTWARE\KasperskyLab\LicStrg" Kaspersky
+* "FirewallName" "SOFTWARE\Panda Software\Setup" Panda
+* "TaskbarGroupIcon" "SOFTWARE\CLasses\Applications\NS.exe" Norton Security
+* "DisplayName" "SYSTEM\ControlSet001\services\DrWebLwf" Dr Web
+* "InstallPath" "SOFTWARE\Bitdefender Agent\Install" Bitdefender
+* "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\bullguard.exe" Bullguard
 
 It then edits the firewall to allow outbound traffic using the following command
 
