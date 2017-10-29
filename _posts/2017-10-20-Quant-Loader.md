@@ -8,7 +8,9 @@ Quant Loader is a piece of Russian malware that originated from exploit.in durin
 The first thing that Quant does is sleep for 180 seconds (og 100% fud reboot antivirus runtime bypass). 
 ![quant_sleep]({{ site.baseurl }}/images/quant_sleep.png)
 
-It then proceeds to decrypt all the strings at once to ensure that reversing it is very easy. <!--more-->**URLDownloadToFileA**? Why is this "professional dll loader/dropper" using win32api functions to preform it's core task? Other interesting strings include the **":Zone.Identifier"**, presumably to strip the identifier flag when the file is downloaded off the internet. To determine whether the system is 32 bit or 64 bit, it reads the "ProgramFiles Dir (x86)". If there is an "x86" in the program files directory, it is a 64 bit system. 
+It then proceeds to decrypt all the strings at once to ensure that reversing it is very easy. <!--more-->
+![quant_guid]({{ site.baseurl }}/images/quant_strings.png)
+**URLDownloadToFileA**? Why is this "professional dll loader/dropper" using win32api functions to preform it's core task? Other interesting strings include the **":Zone.Identifier"**, presumably to strip the identifier flag when the file is downloaded off the internet. To determine whether the system is 32 bit or 64 bit, it reads the "ProgramFiles Dir (x86)". If there is an "x86" in the program files directory, it is a 64 bit system. 
 
 The malware then generates it's unique ID by reading the MachineGuid key at *"SOFTWARE\Microsoft\Cryptography"*, reading only the numbers, then reading 8 numbers starting from the 5th. It will use this GUID to create a new folder at the **Appdata\Roaming\<Guid>\svchost.exe** path, and copying an instance of itself to the path.
 ![quant_guid]({{ site.baseurl }}/images/quant_guid.png)
