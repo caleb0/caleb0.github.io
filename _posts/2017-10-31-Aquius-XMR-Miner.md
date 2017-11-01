@@ -7,7 +7,8 @@ MD5: 710F990ACAF9299D71FD43775D5C9932
 
 
 Aquius miner is an XMR miner advertised on many popular infamous hacking forums, at a relatively steep $20 for a basic build, compared to it's competitors. 
-**Sales thread**
+Sales Thread:
+<!--more-->
 ![sales_thread]({{site.baseurl}}/images/aquius_xmr/sales.png)
 
 From some preliminary analysis, we can determine that the binary is written in C# and obfuscated with some sort of packer. Nothing de4dot can't handle.
@@ -33,3 +34,5 @@ For some reason the author has selected a certain number of pools that the miner
 
 The only other point of interest in the malware is the way that it executes the mining binary. It uses a very detected and public runPE (CreateProcess -> NtUnmap -> NtWriteVM -> NtResumeThread) to 'execute in memory' and also passes several arguments into the function, which seems to suggest that the developer is donating 1% of all profits to themselves! Even after the client has paid some $20 for the binary. Disappointing, but not very surprising. Or, the developer has been stumped on how to remove the donate function in the original binary, and wants to minimise the damage done. Sad!
 ![runpe]({{site.baseurl}}/images/aquius_xmr/launch_miner.png)
+
+Overall this is extremely disappointing, but standard from .NET malware developers. It uses many winAPI functions to preform it's tasks and is just poorly designed overall. I will try and get some HQ malware to analyse for the next blog post :)
