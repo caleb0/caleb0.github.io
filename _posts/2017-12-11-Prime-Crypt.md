@@ -7,6 +7,7 @@ Hello, and welcome back to another episode of insidemalware. sorry i haven't bee
 
 ![info](https://i.imgur.com/IqDBc0Q.png)
 As we can see this is a .net binary (136kb) with no packing.
+<!--more-->
 [VirusTotal Scan (4/67, not bad)](https://www.virustotal.com/#/file-analysis/YmM3ODMxMzEzNzk2OThlY2RiYTIxNzliMDI0MjE3NjY6MTUxMjk2MDAzMQ==)
 
 Let's try and unpack it in dnSpy. 
