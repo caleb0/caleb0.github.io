@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using .doc metadata section maliciously
+title: Malicious Macro Metadata
 ---
 References: https://www.carbonblack.com/2017/08/28/threat-analysis-word-documents-embedded-macros-leveraging-emotet-trojan/
 
