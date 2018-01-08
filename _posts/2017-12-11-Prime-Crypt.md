@@ -27,13 +27,13 @@ This one was made by someone called "zero", and hosting his development environm
 Interesting that the project name is called "classic refud". "refudding" is the process of making a piece of malware undetected from anti-viruses again, when it is inevitably detected. 
 
 
-Again, let's open it up in dnSpy. Wow, none of the strings or function names are encrypted, evident by the phallic themed decryption routine. 
+Again, let's open it up in dnSpy. None of the strings or function names are encrypted, evident by the phallic themed decryption routine. 
 ![decrypt-phallic](https://i.imgur.com/ligKA7p.png)
-Perhaps our malware author should seek some therapy as his unconscious insecurities are leaking into his work!
+Perhaps our malware author should seek some therapy to address his insecurities.
 
 Some generic anti-analysis checks are performed
 ![antis](https://i.imgur.com/nHtv0Py.png)
-The author has also decided to wrap everything in an empty try-catch loop, so nothing can go wrong, a theme we are seeing more and more in amateur malare development. 
+The author has also decided to wrap everything in an empty try-catch loop so nothing can go wrong, a theme we are seeing recurr more frequently in amateur malware development. 
 
 Two more binaries are dumped from this .exe
 A .net binary that is nothing more than a GUI for some sort of a serial number checker. 
