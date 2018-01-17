@@ -7,7 +7,8 @@ References: https://www.carbonblack.com/2017/08/28/threat-analysis-word-document
 In this episode of InsideMalware, we will explore how the metadata section of a word document can be weaponized to avade scantime antivirus detection. It is important to note that this technique is only possible on the older .doc structure, not the newer .docx file version. 
 
 ### Background of .doc structure
-"Metadata" referes to all the data surrounding the data itself. The .doc structure includes allocated fields for a number of different pieces of metadata, including the Title, Author, Date created, date last edited, and comments. 
+"Metadata" referes to all the data surrounding the data itself. The .doc structure includes allocated fields for a number of different pieces of metadata, including the Title, Author, Date created, date last edited, and comments.
+<!--more-->
 
 ![metadata](https://i.imgur.com/HyOsrKX.png)
 ![hex](https://i.imgur.com/DIMS75l.png)
