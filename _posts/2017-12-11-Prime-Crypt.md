@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Prime Crypt - The Babushka Crypter
+title: Prime Crypt
 ---
 
 Hello, and welcome back to another episode of insidemalware. sorry i haven't been posting as much as I would like, had exams, but now i have lots of time to analyse fun malware :)
